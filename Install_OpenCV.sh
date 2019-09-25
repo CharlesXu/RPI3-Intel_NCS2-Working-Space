@@ -1,3 +1,11 @@
+#!/bin/bash
+# This is the script to install OpenCV on Raspberry Pi 3, and run OpenCV with OpenVino
+# Requirement:
+#  - Raspberry Pi 3 (Linux raspberrypi 4.19.66-v7+ #1253 SMP Thu Aug 15 11:49:46 BST 2019 armv7l GNU/Linux)
+#  - Intel Neural Compute Stick 2
+# Reference: 
+#  - https://blog.everlearn.tw/ai/%E5%9C%A8-raspberry-pi-3-model-b-%E5%AE%89%E8%A3%9D-openvino-%E8%88%87-opencv-2-2
+
 
 echo "install pip and virtual environment"
 cd ~
