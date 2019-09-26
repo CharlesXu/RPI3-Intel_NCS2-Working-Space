@@ -1,4 +1,3 @@
-#!/bin/bash
 # This is the script to install OpenCV on Raspberry Pi 3, and run OpenCV with OpenVino
 # Requirement:
 #  - Raspberry Pi 3 (Linux raspberrypi 4.19.66-v7+ #1253 SMP Thu Aug 15 11:49:46 BST 2019 armv7l GNU/Linux)
