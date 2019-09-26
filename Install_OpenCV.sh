@@ -32,9 +32,17 @@ ln -s /opt/intel/openvino/python/python3.5/cv2.cpython-35m-arm-linux-gnueabihf.s
 # to double check whether OpenCV is correctly linked
 python -c "import cv2;print(cv2.__version__)"
 
+####################################
+# Running the examples
+####################################
+
 echo "Testing and examples"
 cd ~
-mkdir openvino && cd openvino
+if [ ! -d openvino ]; then
+  mkdir openvino && cd openvino
+else
+  cd openvino
+fi
 workon openvino
 
 # Example 1: face detection
@@ -47,15 +55,15 @@ python openvino_face_detector.py --config face-detection-adas-0001.xml --model f
 
 # Example 2: object detection
 wget https://github.com/chuanqi305/MobileNet-SSD/raw/master/mobilenet_iter_73000.caffemodel
-wget https://github.com/chuanqi305/MobileNet-SSD/raw/master/deploy.prototxt
+wget https://github.com/chuanqi305/MobileNet-SSD/raw/master/deploy.prototxt -O deploy.prototxt.object_detection
 wget https://www.pexels.com/video/1246169/download/ -O pexels-video.mp4
 wget https://raw.githubusercontent.com/cyrilwang/ncs_python_samples/master/real_time_object_detection.py
 python real_time_object_detection.py --config deploy.prototxt --model mobilenet_iter_73000.caffemodel --video pexels-video.mp4
 # if you want to test with real time video, you can try this
-python real_time_object_detection.py --config deploy.prototxt --model mobilenet_iter_73000.caffemodel
+python real_time_object_detection.py --config deploy.prototxt.object_detection --model mobilenet_iter_73000.caffemodel
 
 # Example 3: age detection
-wget https://raw.githubusercontent.com/opencv/opencv/master/samples/dnn/face_detector/deploy.prototxt
+wget https://raw.githubusercontent.com/opencv/opencv/master/samples/dnn/face_detector/deploy.prototxt 
 wget https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel
 wget https://download.01.org/openvinotoolkit/2018_R5/open_model_zoo/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.xml
 wget https://download.01.org/openvinotoolkit/2018_R5/open_model_zoo/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.bin
