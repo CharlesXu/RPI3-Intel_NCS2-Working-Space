@@ -71,3 +71,11 @@ wget 'https://gcs-vimeo.akamaized.net/exp=1560369175~acl=%2A%2F1239378998.mp4%2A
 python realtime_age_gender_detection.py --target vpu --video sample.mp4
 # if you want to test with real time video, you can try this
 python realtime_age_gender_detection.py --target vpu
+
+
+# YOLO on RPi + NCS
+# https://medium.com/@jim870718/rpi-deep-learning-with-movidius-ncs-and-raspberry-pi-3-308bf3453bc1
+
+
+# YOLO on RPi
+# https://medium.com/@yanweiliu/raspberry-pi學習筆記-二十七-在pi上執行yolov3-9cf124d5d582
